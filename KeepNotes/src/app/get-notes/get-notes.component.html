@@ -1,0 +1,32 @@
+<h2>Notes</h2>
+<div class="card sm-col-4" *ngFor="let note of notes" style="width: 18rem;">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title">{{note.title}}</h5>
+      <h5 class="card-title">{{note.id}}</h5>
+      <p class="card-text">{{note.text}}<br><hr>
+      <!-- <input type="checkbox" name="isPinned" value ="true" >Pin<br> -->
+      <input type="checkbox" class="form-control" value="note.PinStat" checked/> <br>
+      <!-- <app-delete-note></app-delete-note> -->
+      <hr>
+        <!-- <p class="card-text" *ngFor="let lab of note.label">{{lab.label}}
+      </p><br>
+      <p class="card-text" *ngFor="let list of note.checklist">{{list.list}}
+        </p><br> -->
+
+        <div formArrayName="Label">
+            <h2>CheckList</h2><a (click) = "addLabel()">AddCheckList</a>
+            <div *ngFor="let label of Label.controls; let i = index">
+              <div [formGroupName] = "i">
+              <label>Label:
+                <input type="text" formControlName = "label">
+              </label>
+            </div>
+            </div>
+          </div>
+
+      <!-- </p> -->
+      <button class="btn btn-primary" (click)=onClick(note)>delete</button>
+    </div>
+  </div>
+
