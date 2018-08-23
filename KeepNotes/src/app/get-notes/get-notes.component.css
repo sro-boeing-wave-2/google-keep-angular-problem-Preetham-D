@@ -5,10 +5,39 @@
   margin-bottom: 30px;
 } */
 .delete{
-  margin-left:5%;
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+
+}
+.delete:hover{
+  border: 10px;
+  border-color: black;
 }
 
 .edit{
  /* padding-right: 5%; */
- margin-left: 120px;
+ position: absolute;
+ bottom: 50px;
+ right: 10px;
 }
+.edit:hover {
+  border: 10px;
+  border-color: black;
+}
+
+.takenotemodal{
+  margin: 30px 0 auto;
+  text-align: center;
+}
+.modalnote {
+  font-size: 1cm;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.menu{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+

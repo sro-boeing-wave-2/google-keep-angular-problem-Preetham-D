@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-notesModel : Notes = new Notes(6,"NG", "from angular",  true,  [{label:"hr"}], [{list:"wa"}] );
+notesModel : Notes = new Notes(0,"NG", "from angular",  true,  [{label:"hr"}], [{list:"wa"}] );
 //notesModel : Notes = new Notes("","",true,[{label:"hel"}],[{list:"hey"}]);
 constructor(private noteService : NotesService,
 private route : Router) { }

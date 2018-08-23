@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {NotesService} from '../notes.service';
 import {Router} from '@angular/router';
 import {MatGridList} from '@angular/material/grid-list';
+import { CreateComponent } from '../create/create.component';
+import { EditComponent } from '../edit/edit.component';
 // import { ETIMEDOUT } from 'constants';
 // import { Observable } from '../../../node_modules/rxjs';
 //import { Note } from '../INote';
@@ -33,9 +35,14 @@ export class GetNotesComponent implements OnInit {
     this.noteService.getNotes()
     .subscribe(data => this.notes = data);
   }
+  TakeNote : any;
+  EditNote : any;
+
 
   ngOnInit() {
     this.getNotes();
+    this.TakeNote = CreateComponent;
+    this.EditNote = EditComponent;
   }
 
 }

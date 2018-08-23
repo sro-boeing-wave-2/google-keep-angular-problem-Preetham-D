@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule,MatCardModule,MatGridListModule,MatIconModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule,MatCardModule,MatGridListModule,MatIconModule,MatRadioModule,MatMenuModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
@@ -33,7 +33,9 @@ import { GetNotesComponent } from './get-notes/get-notes.component';
     MatButtonModule,
     MatCheckboxModule,
     MatCardModule,
+    MatRadioModule,
     MatGridListModule,
+    MatMenuModule,
     MatIconModule,
     FormsModule,
     HttpClientModule,
