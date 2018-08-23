@@ -1,0 +1,12 @@
+.createform{
+  max-width: 500px;
+  min-width: 300px;
+  vertical-align:auto;
+  margin: 0 auto;
+}
+.pin{
+  align-content: left;
+}
+.pinned{
+  transform: rotate(45deg);
+ }

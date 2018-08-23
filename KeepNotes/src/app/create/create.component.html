@@ -1,47 +1,54 @@
-
-<form #userForm="ngForm" (ngSubmit)="onSubmit()">
-  {{ userForm.value | json }}
-  <hr/>
-  {{notesModel | json}}
-  <!-- {{Note | json}} -->
-  <div class="form-group">
-      <label for="exampleFormControlInput1">Id</label>
-      <input type="Id" class="form-control" name="id" [(ngModel)]="notesModel.Id" id="exampleFormControlInput1" placeholder="Id">
-    </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Title</label>
-    <input type="title" class="form-control" name="Title" [(ngModel)]="notesModel.Title" id="exampleFormControlInput1" placeholder="Title">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Text</label>
-    <textarea class="form-control" name="Text" [(ngModel)]="notesModel.Text" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">PinStat</label>
-    <textarea class="form-control" name="PinStat" [(ngModel)]="notesModel.PinStat" id="exampleFormControlTextarea1" rows="1"></textarea>
-  </div>
-  <!-- <div class="form-group">
-    <label for="exampleFormControlTextarea1">Label</label>
-    <textarea class="form-control" name="label" ngModel id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div> -->
-  <div ngModelGroup="Label">
+<h2 style="text-align: center;margin-top: 30px;margin-bottom: 30px">Take Note</h2>
+<mat-card class="createform" style="background-color:bisque;width: 350px;margin-bottom: 30px">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label *ngFor="let label_1 of notesModel.label">Label
-      <input type="text" class="form-control" name="label" [(ngModel)]="label_1.label">
-    </label>
+      <label for="exampleFormControlInput1">Id
+        <input type="Id" class="form-control" name="id" [(ngModel)]="notesModel.Id" id="exampleFormControlInput1" placeholder="Id">
+      </label>
     </div>
-  </div>
-  <!-- <div class="form-group">
-    <label for="exampleFormControlTextarea1">CheckList</label>
-    <textarea class="form-control" name="CheckList" ngModel id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div> -->
-  <div ngModelGroup="CheckList">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Title
+        <input type="title" class="form-control" name="Title" [(ngModel)]="notesModel.Title" id="exampleFormControlInput1" placeholder="Title">
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Text</label>
+      <textarea class="form-control" name="Text" [(ngModel)]="notesModel.Text" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div ngModelGroup="Label">
+      <div class="form-group">
+        <label *ngFor="let label_1 of notesModel.label">Label
+          <input type="text" class="form-control" name="label" [(ngModel)]="label_1.label">
+        </label>
+      </div>
+    </div>
+
+    <div ngModelGroup="CheckList">
       <div class="form-group">
         <label *ngFor="let x of notesModel.checklist">CheckList
-        <input type="text" class="form-control" name="CheckList" [(ngModel)]="x.list">
-      </label>
+          <input type="text" class="form-control" name="CheckList" [(ngModel)]="x.list">
+        </label>
       </div>
     </div>
 
     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-</form>
+    <hr>
+    <div class="form-group" class="pin">
+      <label for="exampleFormControlTextarea1">Pin
+        <input type="checkbox" class="form-control" name="Pin" [(ngModel)]="notesModel.PinStat" id="exampleFormControlTextarea1"
+          [(value)]="notesModel.PinStat">
+      </label>
+    </div>
+  </form>
+</mat-card>
+
+
+<!-- <div id="pinned" (click)="pinnedToggle(note)" [class.pinned]="!notesModel.PinStat" [style.color]="note.pinned ? 'black': 'brown'">
+        <i class="fas fa-thumbtack"></i>
+      </div> -->
+
+<!-- <div class="form-group">
+    <label for="exampleFormControlTextarea1">CheckList</label>
+    <textarea class="form-control" name="CheckList" ngModel id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div> -->

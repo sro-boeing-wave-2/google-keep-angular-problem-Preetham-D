@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from '../notes.service';
-import {ActivatedRoute} from '@angular/router';
-import { parse } from 'path';
+import {ActivatedRoute, Router} from '@angular/router';
+// import { parse } from 'path';
 
 @Component({
   selector: 'app-delete-note',
@@ -11,7 +11,7 @@ import { parse } from 'path';
 export class DeleteNoteComponent implements OnInit {
 
   id : number;
-  constructor(private noteService : NotesService,private router : ActivatedRoute) { }
+  constructor(private noteService : NotesService,private router : ActivatedRoute,private route : Router) { }
   // onSubmit(){
   //   this.noteService.deleteNotes(this.id).subscribe(data => console.log('success!',data),
   //                     error => console.error('Error!',error));
@@ -20,8 +20,8 @@ export class DeleteNoteComponent implements OnInit {
     console.log(this.id);
     this.id = parseInt(this.router.snapshot.paramMap.get('id'));
     console.log(this.id);
-    this.noteService.deleteNotes(this.id).subscribe(data => console.log('success!',data),
-                      error => console.error('Error!',error));
+    this.noteService.deleteNotes(this.id).subscribe(data => {console.log('success!',data); this.route.navigate(['/notes']),
+                      error => console.error('Error!',error)});
   }
 
 }

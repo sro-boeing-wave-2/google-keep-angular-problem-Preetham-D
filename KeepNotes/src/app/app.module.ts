@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule,MatCardModule,MatGridListModule,MatIconModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
@@ -12,6 +14,7 @@ import { CreateComponent } from './create/create.component';
 // import { GetNotesComponent } from './get-notes/get-notes.component';
 import { DeleteNoteComponent } from './delete-note/delete-note.component';
 import { NotesService } from './notes.service';
+import { GetNotesComponent } from './get-notes/get-notes.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,17 @@ import { NotesService } from './notes.service';
   imports: [
     HttpModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatGridListModule,
+    MatIconModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [NotesService],
+  providers: [NotesService,GetNotesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

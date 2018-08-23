@@ -1,5 +1,6 @@
 export class Notes {
   constructor(
+    // public InternalId : any,
     public Id : number,
     public Title : string,
     public Text : string,
